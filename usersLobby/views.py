@@ -41,7 +41,7 @@ class UsersLobbyEdit(APIView):
             return Response(datas)
 
 class UsersLobbyList(APIView):
-    def get(self, pk, request, format=None):
-        queryset  = UsersLobby.objects.filter(idLobby=pk)
+    def get(self, request, id, format=None):
+        queryset  = UsersLobby.objects.filter(idLobby=id)
         serializer = UsersLobbySerializer(queryset, many=True)
         return Response(serializer.data)             
