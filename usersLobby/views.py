@@ -40,15 +40,8 @@ class UsersLobbyEdit(APIView):
             datas = serializer.data
             return Response(datas)
 
-# class UsersLobbyList(APIView):
-#        def get(self, pk, request, format=None):
-#         queryset  = UsersLobby.objects.filter(idLobby=pk)
-#         serializer = UsersLobbySerializer(queryset, many=True)
-#         return Response(serializer.data)          
-    # def put(self, request, pk ):
-    #     usersLobby = UsersLobby.objects.get(pk=pk)
-    #     UsersLobby_json = UsersLobbySerializer(usersLobby, data=request.data)
-    #     if UsersLobby_json.is_valid():
-    #         UsersLobby_json.save()
-    #         return Response(UsersLobby_json.data, status=201)
-    #     return Response(UsersLobby_json.errors, status=400)    
+class UsersLobbyList(APIView):
+    def get(self, pk, request, format=None):
+        queryset  = UsersLobby.objects.filter(idLobby=pk)
+        serializer = UsersLobbySerializer(queryset, many=True)
+        return Response(serializer.data)             
