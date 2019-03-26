@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -81,10 +82,10 @@ CORS_ALLOW_METHODS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dau81sftvalip4',
-        'USER': 'kxciuakwknoplm',
-        'PASSWORD': '3a8910dbf81d513a3bf5f33333a7619b440830c90d94f753ca9cd3e556b57351',
-        'HOST': 'ec2-184-72-238-22.compute-1.amazonaws.com',
+        'NAME': 'db21f5tjanu37q',
+        'USER': 'lkrnlvwguaiplq',
+        'PASSWORD': 'ae3a101cef4b21c026d41ed4ed608c786b1a3814a23e3d92b02ebc5126d474a5',
+        'HOST': 'ec2-23-23-173-30.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -152,13 +153,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+django_heroku.settings(locals())
