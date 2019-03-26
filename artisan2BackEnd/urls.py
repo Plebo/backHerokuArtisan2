@@ -29,6 +29,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 # ViewSets define the view behavior.
 class UserViewSet(viewsets.ModelViewSet):
+    set_password(User.password)
     queryset = User.objects.all()
     serializer_class = UserSerializer     
 
