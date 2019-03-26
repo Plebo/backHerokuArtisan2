@@ -1,0 +1,1 @@
+web: gunicorn artisan2BackEnd.wsgi --log-file -
