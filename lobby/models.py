@@ -4,4 +4,5 @@ from django.db import models
 class Lobby(models.Model):
     name = models.CharField(max_length=50, null=True)
     playersCount = models.IntegerField(null=True)  
+    deleted = models.IntegerField(null=True)
     
