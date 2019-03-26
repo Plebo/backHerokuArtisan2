@@ -44,5 +44,6 @@ urlpatterns = [
     #re_path(r'^artisan2/v1/', include('users.urls')),
     re_path(r'^artisan2/v1/usersLobby/', include('usersLobby.urls')),
     re_path(r'^artisan2/v1/lobby/', include('lobby.urls')),
+    re_path(r'^artisan2/v1/registro/', include('rest_auth.registration.urls'))
     #url(r'^rest-auth/', include('rest_auth.urls')),
 ]
