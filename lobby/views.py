@@ -24,7 +24,7 @@ class LobbyView(APIView):
         
         return Response(response, status=404) 
 
-class LobbyList(APIView):
+class LobbyEdit(APIView):
 
     def get_objetc(self, pk):
         try:
@@ -43,11 +43,8 @@ class LobbyList(APIView):
         # return Response(Id.data)
 
 
-    # def put(self, request, pk ):
-    #     print(pk)
-        # lobby = Lobby.objects.get(pk=pk)
-        # lobby_json = lobbySerializer(lobby, data=request.data)
-        # if lobby_json.is_valid():
-        #     lobby_json.save()
-        #     return Response(lobby_json.data, status=201)
-        # return Response(lobby_json.errors, status=400) 
+class LobbyList(APIView):
+    def get(self, request, id, format=None):
+        queryset  = UsersLobby.objects.filter(pk=id)
+        serializer = UsersLobbySerializer(queryset, many=True)
+        return Response(serializer.data) 
