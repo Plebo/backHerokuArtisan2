@@ -25,7 +25,7 @@ from django.contrib.auth.models import User
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'username','password')
+        fields = ('id','url', 'username','password')
 
 # ViewSets define the view behavior.
 class UserViewSet(viewsets.ModelViewSet):
