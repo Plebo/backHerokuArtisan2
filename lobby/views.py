@@ -51,6 +51,6 @@ class LobbyList(APIView):
 
 class LobbyByName(APIView):
     def get(self, request, name, format=None):
-        queryset  = Lobby.objects.get(name=name)
+        queryset  = Lobby.objects.filter(name=name)
         serializer = lobbySerializer(queryset, many=True)
         return Response(serializer.data)
