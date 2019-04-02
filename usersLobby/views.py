@@ -45,3 +45,9 @@ class UsersLobbyList(APIView):
         queryset  = UsersLobby.objects.filter(idLobby=id)
         serializer = UsersLobbySerializer(queryset, many=True)
         return Response(serializer.data)             
+
+class UsersLobbyByUserANDLobby(APIView):
+    def get(self, request, idUser, idLobby, format=None):
+        queryset  = UsersLobby.objects.filter(idLobby=id, idLobby = idLobby)
+        serializer = UsersLobbySerializer(queryset, many=True)
+        return Response(serializer.data)
