@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'lobby',
     'message',
     'usersLobby',
+    'words',
 
 ]
 SITE_ID = 1
