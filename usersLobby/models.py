@@ -6,3 +6,4 @@ class UsersLobby(models.Model):
     idUser = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     idLobby = models.ForeignKey(Lobby,null=True, on_delete=models.CASCADE)  
     deleted = models.IntegerField(null=True)
+    photo = models.TextField()
